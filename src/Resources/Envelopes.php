@@ -6,6 +6,8 @@ namespace Dyrynda\Annature\Resources;
 
 use DateTimeImmutable;
 use Dyrynda\Annature\Data\Envelope;
+use Dyrynda\Annature\Enum\EnvelopeStatus;
+use Dyrynda\Annature\Requests\Envelopes\GetEnvelopeRequest;
 use Dyrynda\Annature\Requests\Envelopes\ListEnvelopesRequest;
 use Illuminate\Support\Collection;
 
@@ -33,5 +35,14 @@ class Envelopes extends Resource
         );
 
         return collect($response->json())->map(fn (array $envelope) => Envelope::fromArray($envelope));
+    }
+
+    public function get(string $id): Envelope
+    {
+        $response = $this->connector->send(
+            new GetEnvelopeRequest($id)
+        );
+
+        return Envelope::fromArray($response->json());
     }
 }

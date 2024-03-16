@@ -1,0 +1,14 @@
+{
+    "statusCode": 200,
+    "headers": {
+        "Date": "Sat, 16 Mar 2024 09:37:10 GMT",
+        "Content-Type": "application\/json",
+        "Content-Length": "1314",
+        "Connection": "close",
+        "ETag": "W\/\"8bb2c3a0fc25f4ca357d4179b46c5b9e\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "de5242b7-9254-45e0-8e5d-8976a0aa3adc",
+        "Vary": "Origin"
+    },
+    "data": "{\"id\":\"abc123\",\"name\":\"document-to-sign-1C94fMmrGMFihGJYhq9LV3.pdf\",\"message\":\"You have been sent an envelope to review and digitally sign.\",\"status\":\"voided\",\"shared\":false,\"created\":\"2024-03-15T22:56:14.000Z\",\"sent\":\"2024-03-15T23:00:50.000Z\",\"voided\":\"2024-03-15T23:03:21.000Z\",\"declined\":null,\"completed\":null,\"master\":\"https://some-signed.url/?with=expiry\",\"certificate\":null,\"combined\":null,\"account_id\":\"def456\",\"group_id\":null,\"recipients\":[{\"id\":\"ghi789\",\"name\":\"Michael Dyrynda\",\"email\":\"michael@annature.test\",\"mobile\":null,\"type\":\"signer\",\"status\":\"sent\",\"message\":null,\"password\":false,\"muted\":false,\"order\":1,\"declined_reason\":null,\"created\":\"2024-03-15T22:56:14.000Z\",\"sent\":\"2024-03-15T23:00:50.000Z\",\"declined\":null,\"completed\":null,\"redirects\":{\"session_completed\":null,\"session_declined\":null}}],\"metadata\":{}}"
+}
