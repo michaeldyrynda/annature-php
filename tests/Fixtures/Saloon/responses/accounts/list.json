@@ -1,0 +1,14 @@
+{
+    "statusCode": 200,
+    "headers": {
+        "Date": "Sat, 16 Mar 2024 06:33:09 GMT",
+        "Content-Type": "application\/json",
+        "Content-Length": "320",
+        "Connection": "close",
+        "ETag": "W\/\"19299b84004428f93cce8a8ffb4c78fa\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "caeaf3cd-8cd5-48c7-86b0-821147e9caf2",
+        "Vary": "Origin"
+    },
+    "data": "[{\"id\":\"abc123\",\"name\":\"Michael Dyrynda\",\"email\":\"michael@annature.test\",\"number\":\"0400000000\",\"timezone\":\"+10:30\",\"role\":\"administrator\",\"active\":true,\"group_id\":null,\"organisation_id\":\"def456\",\"created\":\"2024-03-15T22:21:30.000Z\",\"verified\":\"2024-03-15T22:21:57.000Z\"}]"
+}

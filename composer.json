@@ -3,7 +3,8 @@
     "description": "A PHP integration for the Annature eSignature and client verification API",
     "type": "library",
     "require": {
-        "saloonphp/saloon": "^3.7"
+        "saloonphp/saloon": "^3.7",
+        "illuminate/collections": "^11.0"
     },
     "require-dev": {
         "pestphp/pest": "^2.34"
