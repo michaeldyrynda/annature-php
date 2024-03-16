@@ -4,6 +4,34 @@ declare(strict_types=1);
 
 namespace Dyrynda\Annature\Resources;
 
+use DateTimeImmutable;
+use Dyrynda\Annature\Data\Envelope;
+use Dyrynda\Annature\Requests\Envelopes\ListEnvelopesRequest;
+use Illuminate\Support\Collection;
+
 class Envelopes extends Resource
 {
+    public function list(
+        ?string $name = null,
+        ?EnvelopeStatus $status = null,
+        ?string $recipient = null,
+        ?DateTimeImmutable $createdBefore = null,
+        ?DateTimeImmutable $createdAfter = null,
+        ?DateTimeImmutable $completedBefore = null,
+        ?DateTimeImmutable $completedAfter = null,
+    ): Collection {
+        $response = $this->connector->send(
+            new ListEnvelopesRequest(
+                name: $name,
+                status: $status,
+                recipient: $recipient,
+                createdBefore: $createdBefore,
+                createdAfter: $createdAfter,
+                completedBefore: $completedBefore,
+                completedAfter: $completedAfter
+            )
+        );
+
+        return collect($response->json())->map(fn (array $envelope) => Envelope::fromArray($envelope));
+    }
 }
