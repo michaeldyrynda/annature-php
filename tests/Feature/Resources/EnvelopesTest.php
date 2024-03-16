@@ -21,7 +21,7 @@ it('can load a list of envelopes', function () {
         ->toContainOnlyInstancesOf(Envelope::class);
 });
 
-it('can load a single account', function () {
+it('can load a single envelope', function () {
     MockClient::global([
         GetEnvelopeRequest::class => MockResponse::fixture('responses/envelopes/get'),
     ]);
