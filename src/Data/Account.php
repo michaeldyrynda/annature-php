@@ -7,7 +7,7 @@ namespace Dyrynda\Annature\Data;
 use DateTimeImmutable;
 use Dyrynda\Annature\Enum\Role;
 
-final readonly class Account
+final readonly class Account extends Data
 {
     public function __construct(
         public string $id,
