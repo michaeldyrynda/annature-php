@@ -2,7 +2,6 @@
 
 use Dyrynda\Annature\Annature;
 use Dyrynda\Annature\Data\Account;
-use Dyrynda\Annature\Enum\Role;
 use Dyrynda\Annature\Requests\Accounts\GetAccountRequest;
 use Dyrynda\Annature\Requests\Accounts\ListAccountsRequest;
 use Saloon\Http\Faking\MockClient;
@@ -17,7 +16,10 @@ it('can load a list of accounts', function () {
         ListAccountsRequest::class => MockResponse::fixture('responses/accounts/list'),
     ]);
 
-    $accounts = $this->resource->list();
+    expect($this->resource->list())
+        ->toMatchSnapshot()
+        ->toContainOnlyInstancesOf(Account::class);
+});
 
 it('can load a single account', function () {
     MockClient::global([
