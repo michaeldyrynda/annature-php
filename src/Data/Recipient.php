@@ -11,22 +11,22 @@ use Dyrynda\Annature\Enum\RecipientType;
 final readonly class Recipient extends Data
 {
     public function __construct(
-        public string $id,
         public string $name,
         public string $email,
-        public ?string $mobile,
-        public RecipientType $type,
-        public RecipientStatus $status,
-        public ?string $message,
-        public bool $password,
-        public bool $muted,
-        public int $order,
-        public ?string $declinedReason,
-        public ?DateTimeImmutable $created,
-        public ?DateTimeImmutable $sent,
-        public ?DateTimeImmutable $declined,
-        public ?DateTimeImmutable $completed,
-        public Redirects $redirects,
+        public ?string $id = null,
+        public ?string $mobile = null,
+        public ?RecipientType $type = RecipientType::Signer,
+        public ?RecipientStatus $status = null,
+        public ?string $message = null,
+        public string|bool|null $password = null,
+        public bool $muted = false,
+        public ?int $order = null,
+        public ?string $declinedReason = null,
+        public ?DateTimeImmutable $created = null,
+        public ?DateTimeImmutable $sent = null,
+        public ?DateTimeImmutable $declined = null,
+        public ?DateTimeImmutable $completed = null,
+        public ?Redirects $redirects = null,
     ) {
     }
 

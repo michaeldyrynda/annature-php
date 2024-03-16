@@ -7,9 +7,9 @@ namespace Dyrynda\Annature\Data;
 final readonly class Document extends Data
 {
     public function __construct(
-        public ?string $id,
-        public ?string $name,
         public string $base,
+        public ?string $id = null,
+        public ?string $name = null,
     ) {
     }
 }
