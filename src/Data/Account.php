@@ -23,4 +23,21 @@ final readonly class Account
         public DateTimeImmutable $verified,
     ) {
     }
+
+    public static function fromArray(array $account): self
+    {
+        return new self(
+            id: $account['id'],
+            name: $account['name'],
+            email: $account['email'],
+            number: $account['number'],
+            timezone: $account['timezone'],
+            role: Role::from($account['role']),
+            active: $account['active'],
+            groupId: $account['group_id'],
+            organisationId: $account['organisation_id'],
+            created: DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $account['created']),
+            verified: DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $account['verified']),
+        );
+    }
 }
