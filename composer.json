@@ -1,0 +1,28 @@
+{
+    "name": "dyrynda/annature",
+    "description": "A PHP integration for the Annature eSignature and client verification API",
+    "type": "library",
+    "require": {
+        "saloonphp/saloon": "^3.7"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.34"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Dyrynda\\Annature\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Michael Dyrynda",
+            "email": "michael@dyrynda.com.au"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
