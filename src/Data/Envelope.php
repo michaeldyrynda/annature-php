@@ -32,26 +32,26 @@ final readonly class Envelope extends Data
     ) {
     }
 
-    public static function fromArray(array $envelope): self
+    public static function fromArray(array $properties): static
     {
         return new self(
-            id: $envelope['id'],
-            name: $envelope['name'],
-            message: $envelope['message'],
-            status: EnvelopeStatus::from($envelope['status']),
-            shared: $envelope['shared'],
-            created: DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $envelope['created']),
-            sent: $envelope['sent'] ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $envelope['sent']) : null,
-            voided: $envelope['voided'] ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $envelope['voided']) : null,
-            declined: $envelope['declined'] ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $envelope['declined']) : null,
-            completed: $envelope['completed'] ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $envelope['completed']) : null,
-            original: $envelope['original'] ?? null,
-            master: $envelope['master'] ?? null,
-            certificate: $envelope['certificate'] ?? null,
-            accountId: $envelope['account_id'],
-            groupId: $envelope['group_id'],
-            recipients: array_map(fn (array $recipient) => Recipient::fromArray($recipient), $envelope['recipients']),
-            metadata: $envelope['metadata'] ?? [],
+            id: $properties['id'],
+            name: $properties['name'],
+            message: $properties['message'],
+            status: EnvelopeStatus::from($properties['status']),
+            shared: $properties['shared'],
+            created: DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $properties['created']),
+            sent: $properties['sent'] ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $properties['sent']) : null,
+            voided: $properties['voided'] ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $properties['voided']) : null,
+            declined: $properties['declined'] ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $properties['declined']) : null,
+            completed: $properties['completed'] ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $properties['completed']) : null,
+            original: $properties['original'] ?? null,
+            master: $properties['master'] ?? null,
+            certificate: $properties['certificate'] ?? null,
+            accountId: $properties['account_id'],
+            groupId: $properties['group_id'],
+            recipients: array_map(fn (array $properties) => Recipient::fromArray($properties), $properties['recipients']),
+            metadata: $properties['metadata'] ?? [],
         );
     }
 }

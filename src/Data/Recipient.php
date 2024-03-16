@@ -30,25 +30,25 @@ final readonly class Recipient extends Data
     ) {
     }
 
-    public static function fromArray(array $recipient): self
+    public static function fromArray(array $properties): static
     {
         return new self(
-            id: $recipient['id'],
-            name: $recipient['name'],
-            email: $recipient['email'],
-            mobile: $recipient['mobile'],
-            type: RecipientType::from($recipient['type']),
-            status: RecipientStatus::from($recipient['status']),
-            message: $recipient['message'],
-            password: $recipient['password'],
-            muted: $recipient['muted'],
-            order: $recipient['order'],
-            declinedReason: $recipient['declined_reason'],
-            created: DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $recipient['created']),
-            sent: $recipient['sent'] ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $recipient['sent']) : null,
-            declined: $recipient['declined'] ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $recipient['declined']) : null,
-            completed: $recipient['completed'] ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $recipient['completed']) : null,
-            redirects: Redirects::fromArray($recipient['redirects']),
+            id: $properties['id'],
+            name: $properties['name'],
+            email: $properties['email'],
+            mobile: $properties['mobile'],
+            type: RecipientType::from($properties['type']),
+            status: RecipientStatus::from($properties['status']),
+            message: $properties['message'],
+            password: $properties['password'],
+            muted: $properties['muted'],
+            order: $properties['order'],
+            declinedReason: $properties['declined_reason'],
+            created: DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $properties['created']),
+            sent: $properties['sent'] ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $properties['sent']) : null,
+            declined: $properties['declined'] ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $properties['declined']) : null,
+            completed: $properties['completed'] ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $properties['completed']) : null,
+            redirects: Redirects::fromArray($properties['redirects']),
         );
     }
 }

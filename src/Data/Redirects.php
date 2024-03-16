@@ -12,11 +12,11 @@ final readonly class Redirects extends Data
     ) {
     }
 
-    public static function fromArray(array $redirects): self
+    public static function fromArray(array $properties): static
     {
         return new self(
-            sessionCompleted: $redirects['session_completed'],
-            sessionDeclined: $redirects['session_declined'],
+            sessionCompleted: $properties['session_completed'],
+            sessionDeclined: $properties['session_declined'],
         );
     }
 }

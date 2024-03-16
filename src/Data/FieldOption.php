@@ -11,11 +11,4 @@ final readonly class FieldOption extends Data
         public string $option,
     ) {
     }
-
-    public static function fromArray(array $option): self
-    {
-        return new self(
-            ...$option
-        );
-    }
 }

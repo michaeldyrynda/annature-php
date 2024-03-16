@@ -33,28 +33,28 @@ final readonly class Field extends Data
     ) {
     }
 
-    public static function fromArray(array $field): self
+    public static function fromArray(array $properties): static
     {
         return new self(
-            id: $field['id'] ?? null,
-            type: FieldType::from($field['type']),
-            page: $field['page'] ?? null,
-            anchor: $field['anchor'] ?? null,
-            xCoordinate: $field['x_coordinate'] ?? null,
-            yCoordinate: $field['y_coordinate'] ?? null,
-            required: $field['required'] ?? false,
-            readOnly: $field['readonly'] ?? false,
-            collaborative: $field['collaborative'] ?? false,
-            value: $field['value'] ?? null,
-            checked: $field['checked'] ?? false,
-            height: $field['height'] ?? null,
-            width: $field['width'] ?? null,
-            options: collect($field['options'] ?? [])->map(fn (array $option) => FieldOption::fromArray($option))->all(),
-            fontSize: $field['fontSize'] ?? 12,
-            fontType: FontType::tryFrom($field['fontType'] ?? '') ?: FontType::Courier,
-            dateFormat: $field['date_format'] ?? 'DD/MM/YYYY',
-            created: isset($field['created'])
-                ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $field['created'])
+            id: $properties['id'] ?? null,
+            type: FieldType::from($properties['type']),
+            page: $properties['page'] ?? null,
+            anchor: $properties['anchor'] ?? null,
+            xCoordinate: $properties['x_coordinate'] ?? null,
+            yCoordinate: $properties['y_coordinate'] ?? null,
+            required: $properties['required'] ?? false,
+            readOnly: $properties['readonly'] ?? false,
+            collaborative: $properties['collaborative'] ?? false,
+            value: $properties['value'] ?? null,
+            checked: $properties['checked'] ?? false,
+            height: $properties['height'] ?? null,
+            width: $properties['width'] ?? null,
+            options: collect($properties['options'] ?? [])->map(fn (array $option) => FieldOption::fromArray($option))->all(),
+            fontSize: $properties['fontSize'] ?? 12,
+            fontType: FontType::tryFrom($properties['fontType'] ?? '') ?: FontType::Courier,
+            dateFormat: $properties['date_format'] ?? 'DD/MM/YYYY',
+            created: isset($properties['created'])
+                ? DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $properties['created'])
                 : null,
         );
     }

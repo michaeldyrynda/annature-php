@@ -24,20 +24,20 @@ final readonly class Account extends Data
     ) {
     }
 
-    public static function fromArray(array $account): self
+    public static function fromArray(array $properties): static
     {
         return new self(
-            id: $account['id'],
-            name: $account['name'],
-            email: $account['email'],
-            number: $account['number'],
-            timezone: $account['timezone'],
-            role: Role::from($account['role']),
-            active: $account['active'],
-            groupId: $account['group_id'],
-            organisationId: $account['organisation_id'],
-            created: DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $account['created']),
-            verified: DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $account['verified']),
+            id: $properties['id'],
+            name: $properties['name'],
+            email: $properties['email'],
+            number: $properties['number'],
+            timezone: $properties['timezone'],
+            role: Role::from($properties['role']),
+            active: $properties['active'],
+            groupId: $properties['group_id'],
+            organisationId: $properties['organisation_id'],
+            created: DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $properties['created']),
+            verified: DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s.v\Z', $properties['verified']),
         );
     }
 }
