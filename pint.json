@@ -1,0 +1,33 @@
+{
+    "preset": "psr12",
+    "cache-file": "pint.cache",
+    "rules": {
+        "new_with_parentheses": {
+            "anonymous_class": false,
+            "named_class": false
+        },
+        "declare_strict_types": true,
+        "ordered_imports": {
+            "imports_order": ["const", "class", "function"]
+        },
+        "fully_qualified_strict_types": true,
+        "psr_autoloading": true,
+        "class_attributes_separation": {
+            "elements": {
+            "case": "one"
+            }
+        },
+        "no_extra_blank_lines": {
+            "tokens": [
+                "curly_brace_block",
+                "extra",
+                "parenthesis_brace_block",
+                "square_brace_block"
+            ]
+        },
+        "trailing_comma_in_multiline": {
+            "after_heredoc": false,
+            "elements": ["arrays", "parameters"]
+        }
+    }
+}

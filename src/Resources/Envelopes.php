@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Dyrynda\Annature\Resources;
 
 use DateTimeImmutable;
+use Dyrynda\Annature\Data\CreateEnvelopeData;
 use Dyrynda\Annature\Data\Envelope;
 use Dyrynda\Annature\Enum\EnvelopeStatus;
 use Dyrynda\Annature\Requests\Envelopes\CreateEnvelopeRequest;
@@ -47,7 +48,7 @@ class Envelopes extends Resource
         return Envelope::fromArray($response->json());
     }
 
-    public function create(Envelope $envelope): Envelope
+    public function create(CreateEnvelopeData $envelope): Envelope
     {
         $response = $this->connector->send(
             new CreateEnvelopeRequest($envelope)

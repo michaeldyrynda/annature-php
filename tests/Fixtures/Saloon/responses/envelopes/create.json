@@ -1,0 +1,14 @@
+{
+    "statusCode": 201,
+    "headers": {
+        "Date": "Sun, 17 Mar 2024 00:19:02 GMT",
+        "Content-Type": "application\/json",
+        "Content-Length": "683",
+        "Connection": "keep-alive",
+        "ETag": "W\/\"fe57d80054dafa65daa186a85c34bf8e\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "140c001d-e132-485e-956f-5e7d014e8ec4",
+        "Vary": "Origin"
+    },
+    "data": "{\"id\":\"abc123\",\"name\":\"My Test Envelope\",\"message\":\"My test envelope message\",\"status\":\"draft\",\"shared\":false,\"created\":\"2024-03-17T00:19:02.000Z\",\"sent\":null,\"voided\":null,\"declined\":null,\"completed\":null,\"account_id\":\"def456\",\"group_id\":null,\"recipients\":[{\"id\":\"ghi789\",\"name\":\"Michael Dyrynda\",\"email\":\"michael@annature.test\",\"mobile\":null,\"type\":\"signer\",\"status\":\"created\",\"message\":null,\"password\":false,\"muted\":false,\"order\":1,\"declined_reason\":null,\"created\":\"2024-03-17T00:19:02.000Z\",\"sent\":null,\"declined\":null,\"completed\":null,\"redirects\":{\"session_completed\":null,\"session_declined\":null}}]}"
+}
