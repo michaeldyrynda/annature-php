@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace Dyrynda\Annature;
 
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Http\Connector;
-use Saloon\Traits\Body\HasJsonBody;
 use Saloon\Traits\Plugins\AcceptsJson;
+use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
 
-class Annature extends Connector implements HasBody
+class Annature extends Connector
 {
     use AcceptsJson;
-    use HasJsonBody;
+    use AlwaysThrowOnErrors;
 
     public function __construct(
         protected string $id,
