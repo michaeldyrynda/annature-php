@@ -26,5 +26,9 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
+    },
+    "scripts": {
+        "fix-style": "vendor/bin/pint",
+        "test": "vendor/bin/pest" 
     }
 }
