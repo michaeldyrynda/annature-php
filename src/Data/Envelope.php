@@ -27,7 +27,7 @@ final readonly class Envelope extends Data
         /** @var \App\Data\Recipient[] */
         public array $recipients,
         /** @var array<string, mixed> */
-        public array $metadata
+        public array $metadata,
     ) {
     }
 

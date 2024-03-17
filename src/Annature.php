@@ -15,7 +15,7 @@ class Annature extends Connector
 
     public function __construct(
         protected string $id,
-        protected string $key
+        protected string $key,
     ) {
     }
 

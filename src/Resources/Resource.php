@@ -12,7 +12,7 @@ use Saloon\Http\Response;
 abstract class Resource
 {
     public function __construct(
-        protected Annature $connector
+        protected Annature $connector,
     ) {
     }
 

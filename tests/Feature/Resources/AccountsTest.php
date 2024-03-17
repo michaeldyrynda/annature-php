@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Dyrynda\Annature\Annature;
 use Dyrynda\Annature\Data\Account;
 use Dyrynda\Annature\Requests\Accounts\GetAccountRequest;
