@@ -12,9 +12,9 @@ final readonly class CreateEnvelopeData extends Data
         public string $name,
         public ?string $message,
         public string $accountId,
-        /** @var \Illuminate\Support\Collection<\App\Data\CreateDocumentData> */
+        /** @var \Illuminate\Support\Collection<array-key, \Dyrynda\Annature\Data\CreateDocumentData> */
         public Collection $documents,
-        /** @var \Illuminate\Support\Collection<\App\Data\CreateRecipientData> */
+        /** @var \Illuminate\Support\Collection<array-key, \Dyrynda\Annature\Data\CreateRecipientData> */
         public Collection $recipients,
         public bool $shared = false,
         public bool $draft = false,

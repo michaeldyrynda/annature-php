@@ -24,7 +24,7 @@ final readonly class Envelope extends Data
         public ?string $certificate,
         public string $accountId,
         public ?string $groupId,
-        /** @var \App\Data\Recipient[] */
+        /** @var \Dyrynda\Annature\Data\Recipient[] */
         public array $recipients,
         /** @var array<string, mixed> */
         public array $metadata,

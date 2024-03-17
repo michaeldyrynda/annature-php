@@ -12,9 +12,12 @@ final readonly class CreateFieldData extends Data
 {
     public FontType $fontType;
 
-    /** @var \Illuminate\Support\Collection<\Dyrynda\Annature\Data\FieldOption> */
+    /** @var \Illuminate\Support\Collection<array-key, \Dyrynda\Annature\Data\FieldOption> */
     public Collection $options;
 
+    /**
+     * @param \Illuminate\Support\Collection<array-key, \Dyrynda\Annature\Data\FieldOption> $options
+     */
     public function __construct(
         public FieldType $type,
         public ?string $id,
