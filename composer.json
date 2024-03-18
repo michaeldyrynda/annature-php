@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "saloonphp/saloon": "^3.7",
-        "illuminate/collections": "^11.0"
+        "illuminate/collections": "^10.0|^11.0"
     },
     "require-dev": {
         "pestphp/pest": "^2.34",
