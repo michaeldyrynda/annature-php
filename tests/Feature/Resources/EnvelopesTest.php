@@ -19,7 +19,7 @@ use Saloon\Http\Faking\MockResponse;
 use Tests\Fixtures\Saloon\CreateEnvelopeFixture;
 
 beforeEach(function () {
-    $this->resource = (new Annature('abc123', 'def456'))->envelopes();
+    $this->envelopes = (new Annature('abc123', 'def456'))->envelopes();
 });
 
 it('can load a list of envelopes', function () {
@@ -27,7 +27,7 @@ it('can load a list of envelopes', function () {
         ListEnvelopesRequest::class => MockResponse::fixture('responses/envelopes/list'),
     ]);
 
-    expect($this->resource->list())
+    expect($this->envelopes->list())
         ->toMatchSnapshot()
         ->toContainOnlyInstancesOf(Envelope::class);
 });
@@ -37,7 +37,7 @@ it('can load a single envelope', function () {
         GetEnvelopeRequest::class => MockResponse::fixture('responses/envelopes/get'),
     ]);
 
-    $account = $this->resource->get('abc123');
+    $account = $this->envelopes->get('abc123');
 
     expect($account)
         ->toMatchSnapshot()
@@ -50,7 +50,7 @@ it('can create a new envelope', function () {
         CreateEnvelopeRequest::class => new CreateEnvelopeFixture,
     ]);
 
-    $envelope = $this->resource->create(new CreateEnvelopeData(
+    $envelope = $this->envelopes->create(new CreateEnvelopeData(
         name: 'My Test Envelope',
         message: 'My test envelope message',
         shared: false,
@@ -82,7 +82,7 @@ it('can send an existing draft envelope', function () {
         SendEnvelopeRequest::class => MockResponse::make(status: 204),
     ]);
 
-    expect($this->resource->dispatch('abc123'))->toBeTrue();
+    expect($this->envelopes->dispatch('abc123'))->toBeTrue();
 });
 
 it('can void a sent envelope', function () {
@@ -90,7 +90,7 @@ it('can void a sent envelope', function () {
         VoidEnvelopeRequest::class => MockResponse::make(status: 204),
     ]);
 
-    expect($this->resource->void('abc123'))->toBeTrue();
+    expect($this->envelopes->void('abc123'))->toBeTrue();
 });
 
 it('can delete a draft envelope', function () {
@@ -98,5 +98,5 @@ it('can delete a draft envelope', function () {
         DeleteEnvelopeRequest::class => MockResponse::make(status: 204),
     ]);
 
-    expect($this->resource->delete('abc123'))->toBeTrue();
+    expect($this->envelopes->delete('abc123'))->toBeTrue();
 });
