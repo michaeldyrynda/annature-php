@@ -13,7 +13,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Dyrynda\\Annature\\": "src/"
+            "Dyrynda\\Annature\\": "src/",
+            "Tests\\": "tests/"
         }
     },
     "authors": [

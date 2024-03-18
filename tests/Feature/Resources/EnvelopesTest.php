@@ -13,6 +13,7 @@ use Dyrynda\Annature\Requests\Envelopes\GetEnvelopeRequest;
 use Dyrynda\Annature\Requests\Envelopes\ListEnvelopesRequest;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
+use Tests\Fixtures\Saloon\CreateEnvelopeFixture;
 
 beforeEach(function () {
     $this->resource = (new Annature('abc123', 'def456'))->envelopes();
@@ -43,7 +44,7 @@ it('can load a single envelope', function () {
 
 it('can create a new envelope', function () {
     MockClient::global([
-        CreateEnvelopeRequest::class => MockResponse::fixture('responses/envelopes/create'),
+        CreateEnvelopeRequest::class => new CreateEnvelopeFixture,
     ]);
 
     $envelope = $this->resource->create(new CreateEnvelopeData(
