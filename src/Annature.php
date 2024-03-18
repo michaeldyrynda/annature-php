@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Dyrynda\Annature;
 
+use Dyrynda\Annature\Contracts\AnnatureClient;
 use Saloon\Http\Connector;
 use Saloon\Traits\Plugins\AcceptsJson;
 use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
 
-class Annature extends Connector
+class Annature extends Connector implements AnnatureClient
 {
     use AcceptsJson;
     use AlwaysThrowOnErrors;
