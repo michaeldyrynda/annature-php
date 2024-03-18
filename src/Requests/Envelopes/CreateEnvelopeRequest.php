@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Dyrynda\Annature\Requests\Envelopes;
 
-use Dyrynda\Annature\Data\CreateEnvelopeData;
+use Dyrynda\Annature\Data\Envelopes\CreateEnvelopeData;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;

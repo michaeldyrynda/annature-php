@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Dyrynda\Annature\Data\CreateDocumentData;
+use Dyrynda\Annature\Data\Envelopes\CreateDocumentData;
 
 beforeEach(function () {
     $this->array = [

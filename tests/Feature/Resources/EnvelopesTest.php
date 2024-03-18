@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 use Dyrynda\Annature\Annature;
-use Dyrynda\Annature\Data\CreateDocumentData;
-use Dyrynda\Annature\Data\CreateEnvelopeData;
-use Dyrynda\Annature\Data\CreateRecipientData;
+use Dyrynda\Annature\Data\Envelopes\CreateDocumentData;
+use Dyrynda\Annature\Data\Envelopes\CreateEnvelopeData;
+use Dyrynda\Annature\Data\Envelopes\CreateRecipientData;
 use Dyrynda\Annature\Data\Envelope;
 use Dyrynda\Annature\Enum\RecipientType;
 use Dyrynda\Annature\Requests\Envelopes\CreateEnvelopeRequest;

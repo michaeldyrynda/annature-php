@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Dyrynda\Annature\Data;
+namespace Dyrynda\Annature\Data\Envelopes;
+
+use Dyrynda\Annature\Data\Data;
 
 final readonly class Document extends Data
 {

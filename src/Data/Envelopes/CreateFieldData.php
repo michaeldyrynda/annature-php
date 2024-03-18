@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Dyrynda\Annature\Data;
+namespace Dyrynda\Annature\Data\Envelopes;
 
+use Dyrynda\Annature\Data\Data;
 use Dyrynda\Annature\Enum\FieldType;
 use Dyrynda\Annature\Enum\FontType;
 use Illuminate\Support\Collection;
