@@ -13,7 +13,7 @@ final readonly class Document extends Data
         public string $name,
         public int $pages,
         public string $original,
-        public string $master,
+        public ?string $master,
         public DateTimeImmutable $created,
     ) {
     }
