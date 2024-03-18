@@ -12,6 +12,7 @@ use Dyrynda\Annature\Requests\Envelopes\CreateEnvelopeRequest;
 use Dyrynda\Annature\Requests\Envelopes\GetEnvelopeRequest;
 use Dyrynda\Annature\Requests\Envelopes\ListEnvelopesRequest;
 use Dyrynda\Annature\Requests\Envelopes\SendEnvelopeRequest;
+use Dyrynda\Annature\Requests\Envelopes\VoidEnvelopeRequest;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use Tests\Fixtures\Saloon\CreateEnvelopeFixture;
@@ -81,4 +82,12 @@ it('can send an existing draft envelope', function () {
     ]);
 
     expect($this->resource->dispatch('abc123'))->toBeTrue();
+});
+
+it('can void a sent envelope', function () {
+    MockClient::global([
+        VoidEnvelopeRequest::class => MockResponse::make(status: 204),
+    ]);
+
+    expect($this->resource->void('abc123'))->toBeTrue();
 });

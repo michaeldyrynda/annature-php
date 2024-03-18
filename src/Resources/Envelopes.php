@@ -12,6 +12,7 @@ use Dyrynda\Annature\Requests\Envelopes\CreateEnvelopeRequest;
 use Dyrynda\Annature\Requests\Envelopes\GetEnvelopeRequest;
 use Dyrynda\Annature\Requests\Envelopes\ListEnvelopesRequest;
 use Dyrynda\Annature\Requests\Envelopes\SendEnvelopeRequest;
+use Dyrynda\Annature\Requests\Envelopes\VoidEnvelopeRequest;
 use Illuminate\Support\Collection;
 
 class Envelopes extends Resource
@@ -62,6 +63,13 @@ class Envelopes extends Resource
     {
         return $this->connector->send(
             new SendEnvelopeRequest($id)
+        )->successful();
+    }
+
+    public function void(string $id): bool
+    {
+        return $this->connector->send(
+            new VoidEnvelopeRequest($id)
         )->successful();
     }
 }
