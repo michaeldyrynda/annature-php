@@ -1,0 +1,14 @@
+{
+    "statusCode": 200,
+    "headers": {
+        "Date": "Mon, 18 Mar 2024 04:21:57 GMT",
+        "Content-Type": "application\/json",
+        "Content-Length": "960",
+        "Connection": "keep-alive",
+        "ETag": "W\/\"3f404950b42c9093559d9fe5764720f3\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "2c70e26d-145f-49f6-bf4b-663c2ba8648e",
+        "Vary": "Origin"
+    },
+    "data": "[{\"id\":\"abc123\",\"name\":\"my-test.pdf\",\"pages\":1,\"original\":\"https:\\\/\\\/annature.test\\\/documents\\\/original?expiry=later\",\"master\":\"https:\\\/\\\/annature.test\\\/documents\\\/master?expiry=also-later\",\"created\":\"2024-03-18T03:34:27.000Z\"}]"
+}
