@@ -9,6 +9,7 @@ use Dyrynda\Annature\Data\CreateRecipientData;
 use Dyrynda\Annature\Data\Envelope;
 use Dyrynda\Annature\Enum\RecipientType;
 use Dyrynda\Annature\Requests\Envelopes\CreateEnvelopeRequest;
+use Dyrynda\Annature\Requests\Envelopes\DeleteEnvelopeRequest;
 use Dyrynda\Annature\Requests\Envelopes\GetEnvelopeRequest;
 use Dyrynda\Annature\Requests\Envelopes\ListEnvelopesRequest;
 use Dyrynda\Annature\Requests\Envelopes\SendEnvelopeRequest;
@@ -90,4 +91,12 @@ it('can void a sent envelope', function () {
     ]);
 
     expect($this->resource->void('abc123'))->toBeTrue();
+});
+
+it('can delete a draft envelope', function () {
+    MockClient::global([
+        DeleteEnvelopeRequest::class => MockResponse::make(status: 204),
+    ]);
+
+    expect($this->resource->delete('abc123'))->toBeTrue();
 });

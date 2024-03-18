@@ -9,6 +9,7 @@ use Dyrynda\Annature\Data\CreateEnvelopeData;
 use Dyrynda\Annature\Data\Envelope;
 use Dyrynda\Annature\Enum\EnvelopeStatus;
 use Dyrynda\Annature\Requests\Envelopes\CreateEnvelopeRequest;
+use Dyrynda\Annature\Requests\Envelopes\DeleteEnvelopeRequest;
 use Dyrynda\Annature\Requests\Envelopes\GetEnvelopeRequest;
 use Dyrynda\Annature\Requests\Envelopes\ListEnvelopesRequest;
 use Dyrynda\Annature\Requests\Envelopes\SendEnvelopeRequest;
@@ -70,6 +71,13 @@ class Envelopes extends Resource
     {
         return $this->connector->send(
             new VoidEnvelopeRequest($id)
+        )->successful();
+    }
+
+    public function delete(string $id): bool
+    {
+        return $this->connector->send(
+            new DeleteEnvelopeRequest($id)
         )->successful();
     }
 }
