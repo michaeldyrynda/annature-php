@@ -6,8 +6,8 @@ use Dyrynda\Annature\Data\Field;
 use Dyrynda\Annature\Enum\FieldType;
 use Dyrynda\Annature\Enum\FontType;
 
-beforeEach(function () {
-    $this->array = [
+it('can resolve a field from an array', function () {
+    expect(Field::fromArray([
         'id' => '5f66f4705e35d5c49d2a7af7a896b8b4',
         'type' => 'signature',
         'page' => 1,
@@ -26,11 +26,7 @@ beforeEach(function () {
         'font_type' => 'courier',
         'date_format' => 'DD/MM/YYYY',
         'created' => '2019-12-17T05:30:00.000Z',
-    ];
-});
-
-it('can resolve a field from an array', function () {
-    expect(Field::fromArray($this->array))
+    ]))
         ->toMatchSnapshot()
         ->toBeInstanceOf(Field::class)
         ->id->toBe('5f66f4705e35d5c49d2a7af7a896b8b4')

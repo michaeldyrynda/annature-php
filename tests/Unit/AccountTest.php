@@ -5,8 +5,8 @@ declare(strict_types=1);
 use Dyrynda\Annature\Data\Account;
 use Dyrynda\Annature\Enum\Role;
 
-beforeEach(function () {
-    $this->array = [
+it('can resolve an account from an array', function () {
+    expect(Account::fromArray([
         'id' => 'abc123',
         'name' => 'Michael Dyrynda',
         'email' => 'michael@annature.test',
@@ -18,11 +18,7 @@ beforeEach(function () {
         'organisation_id' => 'def456',
         'created' => '2024-03-15T22:21:30.000Z',
         'verified' => '2024-03-15T22:21:57.000Z',
-    ];
-});
-
-it('can resolve an account from an array', function () {
-    expect(Account::fromArray($this->array))
+    ]))
         ->toMatchSnapshot()
         ->toBeInstanceOf(Account::class)
         ->id->toBe('abc123')

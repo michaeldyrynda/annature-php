@@ -5,8 +5,8 @@ declare(strict_types=1);
 use Dyrynda\Annature\Data\Envelope;
 use Dyrynda\Annature\Enum\EnvelopeStatus;
 
-beforeEach(function () {
-    $this->array = [
+it('can resolve an account from an array', function () {
+    expect(Envelope::fromArray([
         'id' => '7e8f68e4c6df9395cd7ff48d69d7e2c1',
         'name' => 'Non disclosure agreement',
         'message' => 'Lorem ipsum dolor sit amet.',
@@ -23,11 +23,7 @@ beforeEach(function () {
         'group_id' => 'a5a885caee6286a54ad7bbd4ab5400e9',
         'recipients' => [],
         'metadata' => [],
-    ];
-});
-
-it('can resolve an account from an array', function () {
-    expect(Envelope::fromArray($this->array))
+    ]))
         ->toMatchSnapshot()
         ->toBeInstanceOf(Envelope::class)
         ->id->toBe('7e8f68e4c6df9395cd7ff48d69d7e2c1')
