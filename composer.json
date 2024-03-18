@@ -30,6 +30,6 @@
     },
     "scripts": {
         "fix-style": "vendor/bin/pint",
-        "test": "vendor/bin/pest" 
+        "test": "vendor/bin/pest -p" 
     }
 }
