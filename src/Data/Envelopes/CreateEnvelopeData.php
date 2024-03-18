@@ -11,7 +11,6 @@ final readonly class CreateEnvelopeData extends Data
 {
     public function __construct(
         public string $name,
-        public ?string $message,
         public string $accountId,
         /** @var \Illuminate\Support\Collection<array-key, \Dyrynda\Annature\Data\CreateDocumentData> */
         public Collection $documents,
@@ -19,6 +18,7 @@ final readonly class CreateEnvelopeData extends Data
         public Collection $recipients,
         public bool $shared = false,
         public bool $draft = false,
+        public ?string $message = null,
         public ?string $groupId = null,
         /** @var array<string, mixed> */
         public array $metadata = [],

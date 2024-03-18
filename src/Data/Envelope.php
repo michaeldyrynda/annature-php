@@ -12,7 +12,7 @@ final readonly class Envelope extends Data
     public function __construct(
         public string $id,
         public string $name,
-        public string $message,
+        public ?string $message,
         public EnvelopeStatus $status,
         public bool $shared,
         public DateTimeImmutable $created,
