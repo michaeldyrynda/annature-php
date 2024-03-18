@@ -11,6 +11,7 @@ use Dyrynda\Annature\Enum\RecipientType;
 use Dyrynda\Annature\Requests\Envelopes\CreateEnvelopeRequest;
 use Dyrynda\Annature\Requests\Envelopes\GetEnvelopeRequest;
 use Dyrynda\Annature\Requests\Envelopes\ListEnvelopesRequest;
+use Dyrynda\Annature\Requests\Envelopes\SendEnvelopeRequest;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 use Tests\Fixtures\Saloon\CreateEnvelopeFixture;
@@ -72,4 +73,12 @@ it('can create a new envelope', function () {
         ->toMatchSnapshot()
         ->toBeInstanceOf(Envelope::class)
         ->id->toBe('abc123');
+});
+
+it('can send an existing draft envelope', function () {
+    MockClient::global([
+        SendEnvelopeRequest::class => MockResponse::make(status: 204),
+    ]);
+
+    expect($this->resource->dispatch('abc123'))->toBeTrue();
 });
