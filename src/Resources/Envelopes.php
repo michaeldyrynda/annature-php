@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Dyrynda\Annature\Resources;
 
 use DateTimeImmutable;
-use Dyrynda\Annature\Data\Envelopes\CreateEnvelopeData;
 use Dyrynda\Annature\Data\Envelope;
+use Dyrynda\Annature\Data\Envelopes\CreateEnvelopeData;
 use Dyrynda\Annature\Enum\EnvelopeStatus;
 use Dyrynda\Annature\Requests\Envelopes\CreateEnvelopeRequest;
 use Dyrynda\Annature\Requests\Envelopes\DeleteEnvelopeRequest;

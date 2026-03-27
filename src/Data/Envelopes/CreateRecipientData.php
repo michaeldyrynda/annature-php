@@ -10,13 +10,13 @@ use Illuminate\Support\Collection;
 
 final readonly class CreateRecipientData extends Data
 {
-    /** @var \Illuminate\Support\Collection<array-key, \Dyrynda\Annature\Data\CreateFieldData> */
+    /** @var Collection<array-key, \Dyrynda\Annature\Data\CreateFieldData> */
     public Collection $fields;
 
     public RecipientType $type;
 
     /**
-     * @param \Illuminate\Support\Collection<array-key, \Dyrynda\Annature\Data\CreateFieldData> $fields
+     * @param Collection<array-key, \Dyrynda\Annature\Data\CreateFieldData> $fields
      */
     public function __construct(
         public string $name,

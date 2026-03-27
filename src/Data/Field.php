@@ -24,7 +24,7 @@ final readonly class Field extends Data
         public bool $checked,
         public ?int $height,
         public ?int $width,
-        /** @var \Dyrynda\Annature\Data\FieldOption[] */
+        /** @var FieldOption[] */
         public ?array $options,
         public ?int $fontSize,
         public ?FontType $fontType,
