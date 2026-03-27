@@ -3,12 +3,12 @@
   "description": "A PHP integration for the Annature eSignature and client verification API",
   "type": "library",
   "require": {
-    "saloonphp/saloon": "^3.7",
-    "illuminate/collections": "^10.0 || ^11.0 || ^12.0"
+    "saloonphp/saloon": "^4.0",
+    "illuminate/collections": "^10.0 || ^11.0 || ^12.0 || ^13.0"
   },
   "require-dev": {
-    "pestphp/pest": "^2.34 || ^3.0",
-    "laravel/pint": "^1.20"
+    "pestphp/pest": "^3.0 || ^4.0",
+    "laravel/pint": "1.29.0"
   },
   "license": "MIT",
   "autoload": {
